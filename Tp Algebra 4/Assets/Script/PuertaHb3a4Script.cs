@@ -10,14 +10,14 @@ public class PuertaHb3a4Script : MonoBehaviour
     void OnTriggerEnter(Collider collision)
     {
         Vector3 Hb3Position;
-        Vector3 Hb4Position;
 
+        Vector3 Hb4Position;
         Quaternion Hb4Rotation;
 
         Hb3Position = new Vector3(20.0f, 3.0f, 0.0f);
 
         Hb4Position = new Vector3(25.1f, 3.0f, 14.8f);
-        //Hb4Rotation = new Quaternion(0.0f, -90.0f, 0.0f);
+        Hb4Rotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
 
         if (collision.tag == "camBox")
         {
@@ -35,7 +35,7 @@ public class PuertaHb3a4Script : MonoBehaviour
 
             if (!GameObject.FindGameObjectWithTag("Habitacion4"))
             {
-                Instantiate(habitacion4, Hb4Position, transform.rotation);
+                Instantiate(habitacion4, Hb4Position, Hb4Rotation);
             }
             
             if (!GameObject.FindGameObjectWithTag("Habitacion3")) 

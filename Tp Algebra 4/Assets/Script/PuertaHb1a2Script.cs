@@ -10,12 +10,12 @@ public class PuertaHb1a2Script : MonoBehaviour
     void OnTriggerEnter(Collider collision)
     {
         Vector3 Hb1Position;
-        //Vector3 Hb1Rotation;
+        Quaternion Hb1Rotation;
 
         Vector3 Hb2Position;
 
         Hb1Position = new Vector3(0.0f, 3.0f, 9.75f);
-        //Hb1Rotation = new Quaternion(0.0f, 180.0f, 0.0f);
+        Hb1Rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
 
         Hb2Position = new Vector3(10.0f, 3.0f, 0.0f);
 
@@ -41,7 +41,7 @@ public class PuertaHb1a2Script : MonoBehaviour
             
             if (!GameObject.FindGameObjectWithTag("Habitacion1")) 
             {
-                Instantiate(habitacion1, Hb1Position, transform.rotation);
+                Instantiate(habitacion1, Hb1Position, Hb1Rotation);
 
                 Destroy(GameObject.FindGameObjectWithTag("Habitacion4"));
             }
